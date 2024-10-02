@@ -20,7 +20,7 @@ jobs:
 
     - name: Find all image files and generate img.txt
       run: |
-        find . -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" \) > img.txt
+        find . -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" \) | sed 's|^\./||' > img.txt
 
     - name: Commit and push changes
       run: |
